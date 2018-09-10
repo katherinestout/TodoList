@@ -1,6 +1,12 @@
 const express = require ('express');
 const app = express ();
 const bodyParser = require('body-parser');
+const MongoClient = require('mongodb').MongoClient;
+
+/*
+MongoClient.connect('link-to-mongodb', (err, database)=>{
+    'mongodb://katie:katiekatie1@ds161059.mlab.com:61059/ktcrudmeantodo'
+});*/
 
 
 //body parser middleware
@@ -24,6 +30,15 @@ app.get('/', (req, res) => {
         console.log(req.body)
       });
 
-app.listen(3000, function(){
-    console.log('listening on 3000')
+    
+//const db;
+
+MongoClient.connect( 'mongodb://katie:katiekatie1@ds161059.mlab.com:61059/ktcrudmeantodo', (err, client)=> 
+{
+    if (err) return console.log(err);
+    db = client.db('ktcrudmeantodo');
+             
+app.listen(3000, () => {
+    console.log('listening on 3000 may the node be with you');
+});
 });
