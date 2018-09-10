@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
     res.send('Hello World')
   }); */
 
+
   app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html')});
 
@@ -31,10 +32,10 @@ app.get('/', (req, res) => {
       });
 
     
-//const db;
 
-MongoClient.connect( 'mongodb://katie:katiekatie1@ds161059.mlab.com:61059/ktcrudmeantodo', (err, client)=> 
-{
+
+MongoClient.connect('mongodb://katie:katiekatie1@ds161059.mlab.com:61059/ktcrudmeantodo', 
+(err, client)=> {
     if (err) return console.log(err);
     db = client.db('ktcrudmeantodo');
              
