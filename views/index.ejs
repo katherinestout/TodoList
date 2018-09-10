@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<body>
+
+    <h1>Enter a todo item</h1>
+  <ul class="quotes">
+  <% for(var i=0; i<items.length; i++) {%>
+    <li class="item">
+    
+      <span><%= items[i].item %></span>
+    </li>
+  <% } %>
+  </ul>
+
+
+  
+
+    <form action="/items" method="POST">
+      <input type="text" name="item" placeholder="todo item">
+      <button type="submit"> Submit! </button>
+    </form>
+
+  </body>
+</html>
