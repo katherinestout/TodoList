@@ -55,6 +55,8 @@ app.get('/', (req, res) => {
 });
 });    
 
+//express.static middleware, tells Express to make public folder acessible to public
+app.use(express.static('public'));
 
 //connection to mlab, listening on PORT 3000
 MongoClient.connect('mongodb://katie:katiekatie1@ds161059.mlab.com:61059/ktcrudmeantodo', 
