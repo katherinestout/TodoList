@@ -28,6 +28,7 @@ update.addEventListener('click', function () {
       },
       body: JSON.stringify({
         'item': 'Walk the dog'
+ 
       })
     }).then(function (response) {
       window.location.reload();
