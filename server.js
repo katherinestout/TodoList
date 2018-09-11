@@ -66,31 +66,22 @@ app.put('/items', (req, res) => {
 
 /*
 app.delete('/items', (req, res) => {
-    db.collection('items').findOneAndDelete({item: req.body.item}, (err, result) => {
+    db.collection('items').findOneAndDelete
+    ({item: req.body.item}, (err, result) => {
       if (err) return res.send(500, err);
      console.log('Your first item was deleted');
      //res.redirect('/');
     });
   });
 */
-  /* - - - -
-app.delete('/items', (req, res)=> {
-    db.collection('items').findOneAndDelete({_id: 1}, {pop: {scores: -1}}, (err, result) =>{
-        if (err) return res.send(500, err);
-        console.log('one deleted');
-       
-        //console.log(items);
 
-    } );
-   
-});
-*/
 app.delete('/items', (req, res)=> {
     db.collection('items').findOneAndDelete({id: req.body._id}, (err, result) => {
         //{_id: 1}, {pop: {scores: -1}}
         if (err) return res.send(500, err);
-        console.log('one deleted');
+        console.log('One todo sucessfully deleted');
        // console.log(result);
+        res.redirect('/');
       
     });
 });
