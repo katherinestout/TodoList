@@ -90,9 +90,9 @@ app.delete('/items', (req, res)=> {
         //{_id: 1}, {pop: {scores: -1}}
         if (err) return res.send(500, err);
         console.log('one deleted');
-        //console.log(items);
-    } );
-   
+       // console.log(result);
+      
+    });
 });
 
 
