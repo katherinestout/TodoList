@@ -23,12 +23,13 @@ var del = document.getElementById('delete');
   var clr = document.getElementById('clear');
 
   clr.addEventListener('click', function () {
-  fetch('items', {
+  fetch('deleteitems', {
     method: 'delete',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
+    'items': 'req.body.items'
 
     })
   }).then(response => {

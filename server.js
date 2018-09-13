@@ -76,7 +76,7 @@ app.delete('/items', (req, res)=> {
 //DELETE ALL route
 //clear the whole list
 
-app.delete("/items", (req, res) => {
+app.delete("/deleteitems", (req, res) => {
     db.collection('items').drop({}, (err, result) => {
         if(err) return console.log(err);
         console.log('You deleted everything!');
