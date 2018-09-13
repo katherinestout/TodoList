@@ -2,13 +2,14 @@
 <html lang="en">
 <% include ../public/head %>
 <body>
+<div class = "container">
 <div class="jumbotron">
     <h1>ToDo Items</h1>
 
 
     <form action="/items" method="POST">
 
-      <input type="text" name="item" placeholder="todo item">
+      <input type="text" name="item" placeholder="Write Something">
       <button type="submit"> Submit! </button>
 
     </form>
@@ -19,13 +20,11 @@
           </li>
         <% } %>
         </ul>
- 
 
-  
-    <button id ="delete" >Delete The First Todo</button>
+    <button type="button" class="btn btn-primary" id ="delete" >Delete The First Todo</button>
 
     <script src="main.js"></script>
-  
+  </div>
 </div>
   </body>
 </html>
