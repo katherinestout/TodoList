@@ -2,29 +2,43 @@
 <html lang="en">
 <% include ../public/head %>
 <body>
+<div class="background">
+
 <div class = "container">
 <div class="jumbotron">
-    <h1>ToDo Items</h1>
 
+  <div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-4">
 
-    <form action="/items" method="POST">
+ <h1 class="section">ToDo List:</h1>
 
-      <input type="text" name="item" placeholder="Write Something">
-      <button type="submit"> Submit! </button>
-
-    </form>
-    <ul class="items">
+<ul class="items">
         <% for(var i=0; i<items.length; i++) {%>
           <li class="item">
             <span><%= items[i].item %></span>
           </li>
         <% } %>
-        </ul>
+</ul>
+</div>
 
-    <button type="button" class="btn btn-primary" id ="delete" >Delete The First Todo</button>
+<div class="col-sm-4">
+  <h1 class="section">Actions:</h1>
+    <form action="/items" method="POST">
+    <input type="text" name="item" placeholder="Write Something" class="input">
+    <button type="submit" class="btn"> Submit an item </button>
+    </form>
 
-    <script src="main.js"></script>
+  <button type="button" class="btn btn-primary" id ="delete">
+  Delete the first item</button>
+
+  <script src="main.js"></script>
+
+  </div>
+  <div class="col-sm-2"></div>
+  </div>
+  </div>
   </div>
 </div>
-  </body>
+</body>
 </html>
