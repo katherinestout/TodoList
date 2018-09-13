@@ -58,22 +58,9 @@ app.get('/', (req, res) => {
 });
 });    
 
-/*
-app.put('/items', (req, res) => {
-    db.collection('items').findOneAndUpdate()
-}) */
-//app.updateOne('/items', ())
 
-/*
-app.delete('/items', (req, res) => {
-    db.collection('items').findOneAndDelete
-    ({item: req.body.item}, (err, result) => {
-      if (err) return res.send(500, err);
-     console.log('Your first item was deleted');
-     //res.redirect('/');
-    });
-  });
-*/
+//DELETE route 
+//Delete first item on list
 
 app.delete('/items', (req, res)=> {
     db.collection('items').findOneAndDelete({id: req.body._id}, (err, result) => {
@@ -85,6 +72,19 @@ app.delete('/items', (req, res)=> {
       
     });
 });
+
+//DELETE ALL route
+//clear the whole list
+
+app.delete("/items", (req, res) => {
+    db.collection('items').drop({}, (err, result) => {
+        if(err) return console.log(err);
+        console.log('You deleted everything!');
+        res.redirect('/');
+    });
+});
+
+
 
 
 //connection to mlab, listening on PORT 3000
