@@ -73,6 +73,12 @@ app.delete('/items', (req, res)=> {
     });
 });
 
+//PUT route to replace first item
+
+app.put('/updateitems', (req, res) => {
+    
+
+
 //DELETE ALL route
 //clear the whole list
 
@@ -87,13 +93,12 @@ app.delete("/deleteitems", (req, res) => {
 
 
 
+
 //connection to mlab, listening on PORT 3000
 MongoClient.connect('mongodb://katie:katiekatie1@ds161059.mlab.com:61059/ktcrudmeantodo', 
 (err, client)=> {
     if (err) return console.log(err);
     db = client.db('ktcrudmeantodo');
-
-             
 app.listen(3000, () => {
     console.log('listening on 3000 may the node be with you');
 });

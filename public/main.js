@@ -1,7 +1,6 @@
 //DELETE 
 //const up = document.getElementById('update');
 
-
 var del = document.getElementById('delete');
   
   del.addEventListener('click', function () {
@@ -37,6 +36,22 @@ var del = document.getElementById('delete');
   });
 });
 
+var update = document.getElementById('update');
+
+update.addEventListener('click', function () {
+  fetch('updateitem', {
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+    'item' : 'Something to dooo'
+
+    })
+  }).then(response => {
+    window.location.reload(response);
+  });
+});
     
     
  
