@@ -36,18 +36,16 @@ var del = document.getElementById('delete');
   });
 });
 
-var update = document.getElementById('update');
+//update function
 
-update.addEventListener('click', function () {
+var upd = document.getElementById('update');
+
+upd.addEventListener('click', function () {
   fetch('updateitem', {
     method: 'put',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-    'item' : 'Something to dooo'
-
-    })
   }).then(response => {
     window.location.reload(response);
   });

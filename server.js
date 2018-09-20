@@ -76,7 +76,18 @@ app.delete('/items', (req, res)=> {
 //PUT route to replace first item
 
 app.put('/updateitems', (req, res) => {
-    
+    db.collection('items').findOneAndUpdate({item: 'Walk the dog'}, {
+        $set: {
+            item: 'Go shopping!'
+        }
+    },
+        (err, result)=> {
+        if (err) return res.send(500, err);
+        console.log('Successfully replaced!');
+        res.redirect('/');
+    });
+
+});
 
 
 //DELETE ALL route
