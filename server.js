@@ -45,7 +45,7 @@ app.post('/items', (req, res)=> {
     db.collection('items').insertOne(req.body, (err, result) =>
     {
         if (err) return console.log(err);
-        console.log('saved to db');
+        console.log('Item saved to db');
         res.redirect('/');
     });
 });
@@ -66,7 +66,7 @@ app.delete('/items', (req, res)=> {
     db.collection('items').findOneAndDelete({id: req.body._id}, (err, result) => {
         //{_id: 1}, {pop: {scores: -1}}
         if (err) return res.send(500, err);
-        console.log('One todo sucessfully deleted');
+        console.log('One item deleted');
        // console.log(result);
         res.redirect('/');
       
@@ -75,15 +75,15 @@ app.delete('/items', (req, res)=> {
 
 //PUT route to replace first item
 
-app.put('/updateitems', (req, res) => {
+app.put('/updateitem', (req, res) => {
     db.collection('items').findOneAndUpdate({item: 'Walk the dog'}, {
         $set: {
-            item: 'Go shopping!'
+            'item': 'Go shopping!'
         }
     },
         (err, result)=> {
         if (err) return res.send(500, err);
-        console.log('Successfully replaced!');
+        console.log('You replaced walking the dog!');
         res.redirect('/');
     });
 

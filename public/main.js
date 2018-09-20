@@ -46,7 +46,12 @@ upd.addEventListener('click', function () {
     headers: {
       'Content-Type': 'application/json'
     },
+    body: JSON.stringify({
+      'item': 'Walk the dog'
+
+    })
   }).then(response => {
+    console.log(response);
     window.location.reload(response);
   });
 });
