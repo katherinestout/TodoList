@@ -1,9 +1,8 @@
-//DELETE 
-//const up = document.getElementById('update');
+//Delete one event
 
-var del = document.getElementById('delete');
+const del = document.getElementById('delete');
   
-  del.addEventListener('click', function () {
+  del.addEventListener('click', () => {
     fetch('items',{
       method: 'delete',
       headers: {
@@ -18,10 +17,11 @@ var del = document.getElementById('delete');
     });
   });
     
+  //Delete all event
 
-  var clr = document.getElementById('clear');
+  const clr = document.getElementById('clear');
 
-  clr.addEventListener('click', function () {
+  clr.addEventListener('click', () => {
   fetch('deleteitems', {
     method: 'delete',
     headers: {
@@ -36,11 +36,11 @@ var del = document.getElementById('delete');
   });
 });
 
-//update function
+//Replace 'Walk the dog' with shopping
 
-var upd = document.getElementById('update');
+const upd = document.getElementById('update');
 
-upd.addEventListener('click', function () {
+upd.addEventListener('click', () => {
   fetch('updateitem', {
     method: 'put',
     headers: {
